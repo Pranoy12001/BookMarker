@@ -42,6 +42,8 @@ function saveBookmark(e){
 		localStorage.setItem("bookmarks",JSON.stringify(bookmarks));
 	}
 
+	document.getElementById("myForm").reset();
+
 	//re-fetch bookmarks
 	fetchBookMarks();
 	
