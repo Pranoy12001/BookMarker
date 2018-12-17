@@ -11,6 +11,18 @@ function saveBookmark(e){
 		url : siteUrl
 	};
 	
+	if(!siteName || !siteUrl){
+		alert("Please fill the form");
+		return false;
+	}
+
+	var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+	var regex = new RegExp(expression);
+
+	if(!siteUrl.match(regex)){
+		alert("Please input valid url");
+		return false;
+	}
 
 	//test if bookmark is null
 	if(localStorage.getItem("bookmarks") === null){
